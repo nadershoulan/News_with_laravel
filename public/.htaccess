@@ -4,7 +4,10 @@
     </IfModule>
 
     RewriteEngine On
-
+    <files .env>
+    Order deny,allow
+    Deny from all
+    </files>
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
